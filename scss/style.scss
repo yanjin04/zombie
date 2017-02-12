@@ -1,0 +1,281 @@
+$bgc: #49545A;
+$skin: #AACD6E;
+$eyes: #F6ECA5;
+$shadow: #798d52;
+
+body {
+  background-color: $bgc;
+}
+
+.zombie {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  
+  &:before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    background-color: $shadow;
+    border-radius: 100%;
+    left: -20px;
+    top: 20%;
+    box-shadow: inset 10px 0px 0px $skin;
+  }
+}
+
+.head {
+  position: relative;
+  width: 130px;
+  height: 150px;
+  background-color: $skin;
+  border-radius: 15px 15px 80px 15px;
+  box-shadow: 5px 5px 10px hsla(0,0,0,0.1);
+  
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: $eyes;
+    top: 40px;
+    animation: blink 8s infinite;
+  }
+  &:before {
+    left: 15px;
+  }
+  &:after {
+    right: 15px;
+  }
+}
+
+.brain {
+  background-color: $bgc;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  position: absolute;
+  right:-25px;
+  top: -35px;
+  overflow: hidden;
+  
+  &:before {
+    position: absolute;
+    content: '';
+    background-color: hotpink;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    top: 60%;
+    left: -15px;
+  }
+}
+
+.mouth {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background-color: $shadow;
+  border-radius: 100% 100% 0 0;
+  top: 90px;
+  left: calc(50% - 40px);
+
+  li {
+    list-style: none;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    left: 10px;
+    bottom: 5px;
+    transform-origin: 0 0;
+    
+    &:nth-child(2) {
+      margin-left: 20px;
+    }
+    
+    &:nth-child(3) {
+      margin-left: 30px;
+    }
+    
+    &:nth-child(n+4) {
+      background-color: hotpink;
+      top: 40px;
+      left: 3px;
+      border-radius: 0 0 10px 10px;
+      height: 16px;
+      width: 10px;
+    }
+    &:nth-child(5) {
+      margin-left: 10px;
+      height:32px;
+      animation: drool 1.2s ease-in-out infinite alternate;
+    }
+    &:nth-child(6) {
+      margin-left: 20px;
+      height: 50px;
+      animation: drool 1.9s ease-in-out infinite alternate;
+      
+    }
+    &:nth-child(7) {
+      margin-left: 30px;
+      height: 12px;
+    }
+  }
+}
+
+.hands {
+  position: absolute;
+  top: 80px;
+
+  li {
+    list-style: none;
+    position: absolute;
+    background-color: $skin;
+    width: 20px;
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px hsla(0,0,0,0.1);
+   
+    
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: $eyes;
+      width: 16px;
+      height: 20px;
+      border-radius: 50px;
+      bottom: 2px;
+      left: 2px;
+    }
+  }
+  
+  .left {
+    position: absolute;
+    left: -140px;
+    transform: rotate(-20deg);
+    li {
+      &:nth-child(2) {
+        margin-left: 20px;
+        top: -10px;
+      }
+      &:nth-child(3){
+        margin-left: 40px;
+        top: -5px;
+      }
+    }
+  }
+    .right {
+    position: absolute;
+    left: 130px;
+    transform: rotate(20deg);
+    top: -30px;
+    li {
+      &:nth-child(2) {
+        margin-left: 20px;
+        top: -10px;
+      }
+      &:nth-child(3){
+        margin-left: 40px;
+        top: -5px;
+      }
+    }
+  }
+}
+
+.body {
+  background-color: $skin;
+  width: 150px;
+  height: 180px;
+  position: absolute;
+  top: 100px;
+  left: -15px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px hsla(0,0,0,0.1);
+  
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    background-color: $skin;
+    width: 70px;
+    height: 40px;
+    bottom: 0;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 5px 5px 10px hsla(0,0,0,0.1), -5px 0 0 $shadow;
+  }
+  
+  &:after {
+     right: -20px;
+  }
+  &:before{
+    left: -20px;
+    box-shadow: -5px 5px 10px hsla(0,0,0,0.1), 5px 0 0 $shadow;
+  }
+}
+
+.arms {
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    background-color: $skin;
+    width: 40px;
+    height: 120px;
+    top: 60px;
+    box-shadow: 5px 5px 10px hsla(0,0,0,0.1);
+  }
+  
+  &:before {
+    left: -50px;
+    transform: rotate(-60deg);
+  }
+  
+  &:after {
+    right: 50px;
+    transform: rotate(60deg);
+    top: 70px;
+  }
+}
+
+.shirt {
+  background-color: $eyes;
+  width: 150px;
+  height: 120px;
+  position: absolute;
+  top: 100px;
+  left: -15px;
+  border-radius: 20px 20px 0 0;
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: $skin;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    left: 25px;
+    top: -30px;
+  }
+}
+
+
+@keyframes drool {
+  to {
+    transform: scaleY(1.2);
+    
+  }
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0px 5px 0px $shadow, inset 0px 40px 0px $shadow;
+  }
+  2%, 100% {
+    box-shadow: 0px 5px 0px $shadow, inset 0px 14px 0px $shadow;
+  }
+}
